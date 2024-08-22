@@ -1,7 +1,7 @@
 baseURL = "http://example.org/"
 DefaultContentLanguage = "zh" # Theme's display language, supports: en, fr, zh, zh-hant
 languageCode = "zh-cn"
-title = "Lissajous Blog"
+title = "Lissajous's Blog"
 copyright = "This is a customized copyright."
 theme = "diary"
 
