@@ -3,7 +3,7 @@ date: 2019-11-14T11:25:05-04:00
 description: 本文章采用狗屁不通文章生成器生成,无任何实际含义.
 featured_image: "/images/chinese.jpg"
 tags: [Chinese,text]
-title: "中文文本测试"
+title: "中文文本测试111"
 categories: Chinese
 ---
 
