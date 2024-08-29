@@ -1,7 +1,8 @@
 ---
 date: 2024-08-29T11:06:25+08:00
 title: 'C语言字符串处理'
-tags: ["tutorial", "hugo"]
+description: "C语言字符串处理相关的基本知识"
+tags: ["tutorial", "C"]
 categories: "Tutorials"
 ---
 ## 1. 字符串的基本概念
