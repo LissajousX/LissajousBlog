@@ -2,6 +2,8 @@
 date: 2024-08-29T11:06:25+08:00
 title: 'C语言字符串处理'
 description: "C语言字符串处理相关的基本知识"
+featured_image: "/images/book.png"
+images: ["/images/book.png"]
 tags: ["tutorial", "C"]
 categories: "Tutorials"
 ---
