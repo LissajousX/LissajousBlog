@@ -1,5 +1,5 @@
 ---
-date = 2024-08-29T18:20:07+08:00
+date: 2024-08-29T18:20:07+08:00
 title: 'GDB使用教程'
 description: "GDB的基本命令和高级调试技巧"
 featured_image: "/images/gdb.png"
