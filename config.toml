@@ -29,6 +29,7 @@ theme = "diary"
 subtitle = "Aha~Aha~"
 enableGitalk = false
 enableGiscus = false
+favicon = "letter-l.svg"
 
 # Microsoft Clarity (https://clarity.microsoft.com/) is a free user behavior recording and analytics tool
 clarity = "abcdefghzd"
