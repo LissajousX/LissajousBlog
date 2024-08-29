@@ -17,17 +17,17 @@ GDB 提供了丰富的命令来调试程序。以下是一些常用的基本命�
 - **直接启动并加载程序**：
  ```bash
   gdb ./your_program
-  ```
+```
   这会加载可执行文件 `your_program`，但不会立即运行程序。
 - **加载程序并附加核心转储文件**：
-  ```bash
+```bash
   gdb ./your_program core
-  ```
+```
  通过加载核心转储文件，可以查看程序崩溃时的状态。
 - **附加到正在运行的进程**：
  ```bash
   gdb -p <pid>
-  ```
+```
   通过进程 ID（PID）附加到正在运行的进程，这在需要调试后台进程时很有用。
 ## 2. 运行程序
 
@@ -36,144 +36,144 @@ GDB 提供了丰富的命令来调试程序。以下是一些常用的基本命�
 - **启动并运行程序**：
 ```bash
   run
-   ```
+```
   如果程序需要命令行参数，可以在 `run` 后面加上参数：
-  ```bash
+```bash
   run arg1 arg2
-  ```
+```
 - **重新运行程序**：如果程序在调试过程中已经运行过一次，可以使用 `run` 重新启动。GDB 会提示是否重新启动，输入 `y` 即可。
 ## 3. 设置断点
 
 **命令**：`break [location] [if condition]`
 
 - **在函数入口设置断点**：
-  ```bash
+```bash
   break main
-  ```
+```
 - **在指定行号设置断点**：
-  ```bash
+```bash
   break 42
-  ```
+```
 - **在特定文件的行号设置断点**：
-  ```bash
+```bash
   break example.c:10
-  ```
+```
 - **条件断点**：仅在满足特定条件时触发。
-  ```bash
+```bash
   break 30 if x == 5
-  ```
+```
 - **查看所有断点**：
-  ```bash
+```bash
   info breakpoints
-  ```
+```
 - **删除断点**：
-  ```bash
+```bash
   delete <breakpoint-number>
-  ```
+```
 ## 4. 查看变量
 
 **命令**：`print [expression]` 或 `p [expression]`
 
 - **查看变量的当前值**：
-  ```bash
+```bash
   print variable_name
-  ```
+```
 - **查看复杂表达式的结果**：
-  ```bash
+```bash
   print x + y * z
-  ```
+```
 - **查看指针指向的内容**：
-  ```bash
+```bash
   print *ptr
-  ```
+```
 - **以特定格式查看变量**（如十六进制、字符等）：
-  ```bash
+```bash
   print/x variable_name  # 以十六进制显示
   print/c variable_name  # 以字符显示
-  ```
+```
 - **持续观察变量的变化**：
-  ```bash
+```bash
   display variable_name
-  ```
+```
   每次程序停止时，GDB 都会自动打印该变量的当前值。
 ## 5. 单步调试
 
 **命令**：`next (n)` 和 `step (s)`
 
 - **`next`**：执行下一行代码，不进入函数内部。
-  ```bash
+```bash
   next
-  ``` 
+``` 
   或者简写为：
-  ```bash
+```bash
   n
-  ```
+```
 - **`step`**：执行下一行代码，如果是函数调用，会进入函数内部。
-  ```bash
+```bash
   step
-  ```
+```
   或者简写为：
-  ```bash
+```bash
   s
-  ```
+```
 - **`finish`**：运行到当前函数的末尾并返回调用者。
-  ```bash
+```bash
   finish
-  ```
+```
 ## 6. 继续运行
 
 **命令**：`continue (c)`
 
 - **继续执行程序**直到下一个断点或程序结束：
-  ```bash
+```bash
   continue
-  ```
+```
   或者简写为：
-  ```bash
+```bash
   c
-  ```
+```
 ## 7. 查看调用栈
 
 **命令**：`backtrace (bt)`
 
 - **查看当前调用栈**：显示当前函数调用的层级关系，帮助分析调用路径。
-  ```bash
+```bash
   backtrace
-  ```
+```
   或者简写为：
-  ```bash
+```bash
   bt
-  ```
+```
 - **查看调用栈的特定范围**：
-  ```bash
+```bash
   bt 3  # 只显示栈顶的 3 层调用
-  ```
+```
 - **查看栈帧中的变量**：
-  ```bash
+```bash
   frame 1  # 切换到第 1 层栈帧
   info locals  # 显示当前栈帧中的局部变量
-  ```
+```
 ## 8. 查看源代码
 
 **命令**：`list (l)`
 
 - **查看当前执行点附近的源代码**：
-  ```bash
+```bash
   list
-  ```
+```
   或者简写为：
-  ```bash
+```bash
   l
-  ```
+```
 - **查看特定行附近的代码**：
-  ```bash
+```bash
   list 10
-  ```
+```
   这将显示第 10 行附近的代码。
 - **查看特定函数的代码**：
-  ```bash
+```bash
   list factorial
-  ```
+```
 # GDB 高级调试技巧
 
 ## 1. 条件断点
