@@ -17,9 +17,9 @@ theme = "diary"
     hl_Lines = ""
     lineNoStart = 1
     lineNos = true
-    lineNumbersInTable = true
+    lineNumbersInTable = false
     noClasses = true
-    style = "dracula"
+    style = "monokai"
     tabWidth = 4
 
 [params]
@@ -83,3 +83,6 @@ weight = 3
 url = "/index.xml"
 name = "RSS"
 weight = 4
+
+[frontmatter]
+  lastmod = ["git", "date"]

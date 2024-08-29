@@ -41,7 +41,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 字符串长度: 13
 ```
 
@@ -72,7 +72,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 复制后的字符串: Hello, C!
 部分复制后的字符串: Hello
 ```
@@ -103,7 +103,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 拼接后的字符串: Hello, World!
 部分拼接后的字符串: Hello, World!Wor
 ```
@@ -138,7 +138,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 第一个字符串小于第二个字符串
 ```
 
@@ -165,8 +165,8 @@ int main() {
     return 0;
 }
 ```
-输出:
-```c
+输出：
+```shell
 找到子字符串: World!
 ```
 
@@ -219,8 +219,8 @@ int main() {
     return 0;
 }
 ```
-输出示例：
-```c
+输出：
+```shell
 请输入一个字符串（无空格）：Hello
 你输入的字符串是：Hello
 ```
@@ -241,8 +241,8 @@ int main() {
     return 0;
 }
 ```
-输出示例：
-```c
+输出：
+```shell
 请输入一个字符串（包含空格）：Hello World
 你输入的字符串是：Hello World
 ```
@@ -263,8 +263,8 @@ int main() {
     return 0;
 }
 ```
-输出示例：
-```c
+输出：
+```shell
 请输入一个字符串（包含空格）：Hello World
 你输入的字符串是：Hello World
 ```
@@ -283,8 +283,8 @@ int main() {
     return 0;
 }
 ```
-输出示例：
-```c
+输出：
+```shell
 输出字符串：Hello, C!
 ```
 
@@ -302,8 +302,8 @@ int main() {
     return 0;
 }
 ```
-输出示例：
-```c
+输出：
+```shell
 Hello, World!
 ```
 
@@ -341,7 +341,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 反转后的字符串: !dlroW ,olleH
 ```
 
@@ -375,7 +375,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 转换为大写: HELLO, WORLD!
 转换为小写: hello, world!
 ```
@@ -425,7 +425,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 安全复制后的字符串: Hello, World!
 ```
 
@@ -467,7 +467,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 子字符串 "World" 的起始位置是: 7
 ```
 
@@ -507,7 +507,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 替换后的字符串: Hello, C!
 ```
 
@@ -536,7 +536,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 删除字符 'o' 后的字符串: Hell, Wrld!
 ```
 
@@ -568,7 +568,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 字符串中的单词数量: 6
 ```
 
@@ -607,7 +607,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 字符串转整数: -1234
 ```
 
@@ -635,7 +635,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 复制后的字符串: Optimize!
 ```
 使用指针操作字符串能够减少不必要的索引运算，提升遍历效率。
@@ -662,7 +662,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 处理后的字符串: Hello World
 处理后的字符串: Goodbye Universe
 ```
@@ -733,7 +733,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 找到匹配的子字符串，起始位置为: 10
 ```
 KMP算法通过减少不必要的字符匹配，提高了字符串查找的效率。
@@ -802,7 +802,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 添加新单词: apple
 添加新单词: banana
 添加新单词: orange
@@ -986,7 +986,7 @@ int main() {
 }
 ```
 输出：
-```c
+```shell
 未找到字符 'x'
 ```
 
