@@ -10,6 +10,9 @@ theme = "diary"
   [services.googleAnalytics]
     id = "G-XXXXXXXXXX"  # Your Google Analytics ID
 
+[frontmatter]
+  lastmod = ['lastmod', ':git', ':fileModTime', 'date', 'publishDate']
+
 [markup]
   [markup.highlight]
     codeFences = true
@@ -83,6 +86,3 @@ weight = 3
 url = "/index.xml"
 name = "RSS"
 weight = 4
-
-[frontmatter]
-  lastmod = ["git", "date"]
