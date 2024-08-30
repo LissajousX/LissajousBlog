@@ -5,6 +5,8 @@ title = "Lissajous's Blog"
 copyright = "This is a customized copyright."
 theme = "diary"
 
+enableGitInfo = true
+
 #Google Analytics
 [services]
   [services.googleAnalytics]
