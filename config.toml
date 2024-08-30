@@ -31,7 +31,7 @@ enableGitInfo = true
 subtitle = "Aha~Aha~"
 enableGitalk = false
 enableGiscus = false
-favicon = "desmos-graph-s.svg"
+favicon = "desmos-graph-s1.svg"
 
 # Microsoft Clarity (https://clarity.microsoft.com/) is a free user behavior recording and analytics tool
 clarity = "abcdefghzd"
