@@ -113,9 +113,9 @@ git push -u origin main
 这三句指令就可以了。
 
 # 各种问题
-[hugo博客github action部署后文章更新时间异常修复](https://cloud.tencent.com/developer/article/2298026)
-[lissajous curve generation](https://www.desmos.com/calculator/tti5dasmc4?lang=zh-CN)
-[icon generation](https://www.bitbug.net/index)
+- [hugo博客github action部署后文章更新时间异常修复](https://cloud.tencent.com/developer/article/2298026)
+- [lissajous curve generation](https://www.desmos.com/calculator/tti5dasmc4?lang=zh-CN)
+- [icon generation](https://www.bitbug.net/index)
 
 # 参考链接 
 [在github.io用hugo部署个人博客，2023新教程](https://zhuanlan.zhihu.com/p/649542248)
