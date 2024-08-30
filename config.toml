@@ -6,8 +6,8 @@ copyright = "This is a customized copyright."
 theme = "diary"
 
 enableGitInfo = true
-ignoreFiles = ["\\\\content\\\\posts\\\\templates\\\\"] #for windows
-#ignoreFiles = ["^content/posts/templates/"]
+#ignoreFiles = ["\\\\content\\\\posts\\\\templates\\\\"] #for windows
+ignoreFiles = ["^content/posts/templates/"]
 
 
 #Google Analytics
