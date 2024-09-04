@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "fc76eedc26c0fb1c",
+        "id": "997facddb524d520",
         "type": "tabs",
         "children": [
           {
-            "id": "57ac70692cbba539",
+            "id": "6ebec133380a3815",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -139,17 +139,17 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "57ac70692cbba539",
+  "active": "6ebec133380a3815",
   "lastOpenFiles": [
     "C语言中处理二维数组.md",
     "C语言字符串处理.md",
     "GDB使用教程.md",
+    "templates/c.md",
     "hugo_tutorial.md",
     "常用备忘录.md",
     "使用 sprintf 和相关函数进行字符串格式化.md",
     "磁控软体机器人.md",
     "未命名",
-    "templates/c.md",
     "templates/bash.md",
     "templates/blog.md",
     "templates",

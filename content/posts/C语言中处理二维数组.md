@@ -620,3 +620,205 @@ int main() {
     
     - `insertElement`、`updateElement`、`deleteElement` 和 `getElement` 函数分别实现增、删、改、查操作，并正确地处理内存分配和释放。
 
+
+## 二维数组行列数需要随数据规模变化而变化
+实话说，要实现这个功能，对于纯c语言真的麻烦。
+### 示例代码
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// 定义一个结构体，表示二维数组中的元素
+typedef struct {
+    int id;
+    char* name;  // 动态分配的字符串指针
+    float score;
+} Element;
+
+// 定义一个结构体，用来管理动态生成的二维数组
+typedef struct {
+    int rows;       // 当前行数
+    int cols;       // 当前列数
+    int capacity;   // 当前容量（列的最大值）
+    Element** matrix;  // 指向指针的指针，表示动态分配的二维数组
+} DynamicMatrix;
+
+// 初始化动态二维数组
+DynamicMatrix* createMatrix(int initialRows, int initialCols) {
+    DynamicMatrix* m = (DynamicMatrix*)malloc(sizeof(DynamicMatrix));  // 为DynamicMatrix结构体分配内存
+    if (m == NULL) {
+        printf("内存分配失败。\n");
+        return NULL;
+    }
+
+    m->rows = initialRows;
+    m->cols = initialCols;
+    m->capacity = initialCols;
+    m->matrix = (Element**)malloc(initialRows * sizeof(Element*));  // 分配行指针数组
+    if (m->matrix == NULL) {
+        printf("内存分配失败。\n");
+        free(m);
+        return NULL;
+    }
+
+    for (int i = 0; i < initialRows; i++) {
+        m->matrix[i] = (Element*)malloc(initialCols * sizeof(Element));  // 为每行分配内存
+        if (m->matrix[i] == NULL) {
+            printf("内存分配失败。\n");
+            // 释放已分配的内存
+            for (int j = 0; j < i; j++) {
+                free(m->matrix[j]);
+            }
+            free(m->matrix);
+            free(m);
+            return NULL;
+        }
+
+        // 初始化每个元素
+        for (int j = 0; j < initialCols; j++) {
+            m->matrix[i][j].id = 0;
+            m->matrix[i][j].name = NULL;  // 初始化指针为空
+            m->matrix[i][j].score = 0.0f;
+        }
+    }
+
+    return m;
+}
+
+// 扩展矩阵容量（增加列数）
+void expandMatrix(DynamicMatrix* m) {
+    int newCapacity = m->capacity * 2;  // 增加容量（例如，增加一倍）
+
+    for (int i = 0; i < m->rows; i++) {
+        Element* newRow = (Element*)realloc(m->matrix[i], newCapacity * sizeof(Element));
+        if (newRow == NULL) {
+            printf("内存重新分配失败。\n");
+            return;
+        }
+        // 初始化新增加的元素
+        for (int j = m->capacity; j < newCapacity; j++) {
+            newRow[j].id = 0;
+            newRow[j].name = NULL;
+            newRow[j].score = 0.0f;
+        }
+        m->matrix[i] = newRow;
+    }
+    m->capacity = newCapacity;
+}
+
+// 添加新元素到二维数组中（按行扩展）
+void addElement(DynamicMatrix* m, int row, int id, const char* name, float score) {
+    if (row >= m->rows) {
+        // 增加行数
+        int newRows = row + 1;
+        Element** newMatrix = (Element**)realloc(m->matrix, newRows * sizeof(Element*));
+        if (newMatrix == NULL) {
+            printf("内存重新分配失败。\n");
+            return;
+        }
+
+        m->matrix = newMatrix;
+
+        // 为新增的行分配内存
+        for (int i = m->rows; i < newRows; i++) {
+            m->matrix[i] = (Element*)malloc(m->capacity * sizeof(Element));
+            if (m->matrix[i] == NULL) {
+                printf("内存分配失败。\n");
+                return;
+            }
+
+            // 初始化新行的每个元素
+            for (int j = 0; j < m->capacity; j++) {
+                m->matrix[i][j].id = 0;
+                m->matrix[i][j].name = NULL;
+                m->matrix[i][j].score = 0.0f;
+            }
+        }
+
+        m->rows = newRows;
+    }
+
+    // 当列超过当前容量时扩展容量
+    if (m->cols >= m->capacity) {
+        expandMatrix(m);
+    }
+
+    // 插入元素
+    m->matrix[row][m->cols].id = id;
+    m->matrix[row][m->cols].name = malloc(strlen(name) + 1);  // 分配内存
+    if (m->matrix[row][m->cols].name) {
+        strcpy(m->matrix[row][m->cols].name, name);  // 复制字符串
+    }
+    m->matrix[row][m->cols].score = score;
+    m->cols++;  // 增加列数
+}
+
+// 打印二维数组
+void printMatrix(const DynamicMatrix* m) {
+    for (int i = 0; i < m->rows; i++) {
+        for (int j = 0; j < m->cols; j++) {
+            printf("(%d, %s, %.2f) ", m->matrix[i][j].id,
+                   m->matrix[i][j].name ? m->matrix[i][j].name : "NULL",
+                   m->matrix[i][j].score);
+        }
+        printf("\n");
+    }
+}
+
+// 释放矩阵中所有动态分配的内存
+void freeMatrix(DynamicMatrix* m) {
+    if (!m) return;
+
+    for (int i = 0; i < m->rows; i++) {
+        for (int j = 0; j < m->capacity; j++) {
+            if (m->matrix[i][j].name) {
+                free(m->matrix[i][j].name);
+            }
+        }
+        free(m->matrix[i]);  // 释放每一行的内存
+    }
+    free(m->matrix);  // 释放行指针数组
+    free(m);  // 释放DynamicMatrix结构体本身
+}
+
+int main() {
+    int initialRows = 1, initialCols = 2;
+    DynamicMatrix* m = createMatrix(initialRows, initialCols);  // 动态创建矩阵
+
+    if (m == NULL) {
+        printf("矩阵创建失败。\n");
+        return 1;
+    }
+
+    printf("初始化后的矩阵：\n");
+    printMatrix(m);
+
+    // 添加新元素
+    addElement(m, 0, 1, "Alice", 88.5f);
+    addElement(m, 0, 2, "Bob", 92.0f);
+    addElement(m, 1, 3, "Charlie", 75.0f);  // 自动扩展行
+    printf("\n添加元素后的矩阵：\n");
+    printMatrix(m);
+
+    // 释放矩阵中的所有动态分配的内存
+    freeMatrix(m);
+
+    return 0;
+}
+```
+
+### 关键实现说明
+
+1. **动态扩展容量**：
+    
+    - 通过`realloc`函数来扩展二维数组的行数和列数。
+    - 每次容量不足时，容量翻倍（或根据实际需求扩展），以避免频繁的内存分配操作。
+2. **按需增加行或列**：
+    
+    - 如果需要插入新元素超过了当前容量，则调用`expandMatrix`函数扩展容量。
+    - 当需要增加新行时，重新分配行指针数组，并为新行分配内存。
+3. **内存管理**：
+    
+    - 确保在每次分配新内存之前，检查是否需要释放旧内存。
+    - 提供`freeMatrix`函数用于释放所有动态分配的内存，防止内存泄漏。
