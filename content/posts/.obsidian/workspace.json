@@ -139,22 +139,22 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": false,
-      "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
     }
   },
   "active": "1157709e6133afee",
   "lastOpenFiles": [
-    "picture/pic_for_bug/1.png",
+    "神奇的故障定位故事/pic_for_bug/1.png",
     "picture/pic_for_bug/file-read-4923.png",
-    "picture/pic_for_bug",
+    "神奇的故障定位故事/pic_for_bug",
     "picture/新建文件夹",
     "picture/file-read-4923.png",
-    "picture",
+    "神奇的故障定位故事",
     "hugo_tutorial.md",
     "神奇的故障定位故事.md",
     "C语言链表实现.md",
