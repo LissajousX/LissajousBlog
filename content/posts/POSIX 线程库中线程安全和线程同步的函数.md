@@ -26,6 +26,7 @@ categories: Tutorials
     - `attr`: 互斥锁的属性，可以为 `NULL` 表示默认属性。
     - **返回值**: 成功返回 `0`，失败返回错误码。
 
+
 - **`pthread_mutex_lock`**: 加锁操作，使调用线程获得互斥锁。如果锁已经被其他线程持有，则调用线程会阻塞，直到锁可用。
 
     ```c
@@ -35,6 +36,7 @@ categories: Tutorials
     - `mutex`: 指向要锁住的互斥锁。
     - **返回值**: 成功返回 `0`，失败返回错误码。
 
+
 - **`pthread_mutex_trylock`**: 尝试加锁。如果锁不可用（已被其他线程持有），不会阻塞调用线程，而是立即返回。
 
     ```c
@@ -42,6 +44,7 @@ categories: Tutorials
     ```
 
     - **返回值**: 成功返回 `0`，如果锁不可用返回 `EBUSY`。
+
 
 - **`pthread_mutex_unlock`**: 解锁操作，释放调用线程持有的互斥锁。
 
@@ -51,6 +54,7 @@ categories: Tutorials
 
     - **返回值**: 成功返回 `0`，失败返回错误码。
 
+
 - **`pthread_mutex_destroy`**: 销毁互斥锁，释放其资源。
 
     ```c
@@ -59,11 +63,12 @@ categories: Tutorials
 
     - **返回值**: 成功返回 `0`，失败返回错误码。
 
+
 ### 2. 条件变量 (Condition Variable)
 
 条件变量允许线程阻塞，等待某个条件的发生。
 
-- pthread_cond_init`**: 用于初始化一个条件变量。
+- **`pthread_cond_init`**: 用于初始化一个条件变量。
 
     ```c
     int pthread_cond_init(pthread_cond_t *cond, const pthread_condattr_t *attr);
@@ -73,7 +78,8 @@ categories: Tutorials
 	 - `attr`: 条件变量的属性，可以为 `NULL` 表示使用默认属性。
 	 - **返回值**: 成功返回 `0`，失败返回错误码。
 
-- pthread_cond_wait`**: 使调用线程阻塞，等待特定条件的发生。当线程调用此函数时，它会自动释放与之关联的互斥锁，并将线程置于等待条件变量的状态。此函数返回时，调用线程将重新获得互斥锁。
+
+- **`pthread_cond_wait`**: 使调用线程阻塞，等待特定条件的发生。当线程调用此函数时，它会自动释放与之关联的互斥锁，并将线程置于等待条件变量的状态。此函数返回时，调用线程将重新获得互斥锁。
 
     ```c
     int pthread_cond_wait(pthread_cond_t *cond, pthread_mutex_t *mutex);
@@ -82,6 +88,7 @@ categories: Tutorials
     - `cond`: 条件变量指针。
     - `mutex`: 指向互斥锁的指针，该锁必须在调用 `pthread_cond_wait` 之前被锁住。
     - **返回值**: 成功返回 `0`，失败返回错误码。
+
 
 - **`pthread_cond_signal`**: 唤醒等待条件变量的一个线程。
 
@@ -92,6 +99,7 @@ categories: Tutorials
     - `cond`: 条件变量指针。
     - **返回值**: 成功返回 `0`，失败返回错误码。
 
+
 - **`pthread_cond_broadcast`**: 唤醒等待条件变量的所有线程。
 
     ```c
@@ -101,6 +109,7 @@ categories: Tutorials
     - `cond`: 条件变量指针。
     - **返回值**: 成功返回 `0`，失败返回错误码。
 
+
 - **`pthread_cond_destroy`**: 销毁条件变量，释放其资源。
 
     ```c
@@ -109,6 +118,7 @@ categories: Tutorials
 
     - `cond`: 条件变量指针。
     - **返回值**: 成功返回 `0`，失败返回错误码。
+
 
 ### 3. 读写锁 (Read-Write Lock)
 
@@ -124,6 +134,7 @@ categories: Tutorials
     - `attr`: 读写锁属性，可以为 `NULL` 表示默认属性。
     - **返回值**: 成功返回 `0`，失败返回错误码。
 
+
 - **`pthread_rwlock_rdlock`**: 获取读锁。如果写锁已经被占用，调用线程将被阻塞。
 
     ```c
@@ -131,6 +142,7 @@ categories: Tutorials
     ```
 
     - **返回值**: 成功返回 `0`，失败返回错误码。
+
 
 - **`pthread_rwlock_wrlock`**: 获取写锁。如果读锁或写锁已经被占用，调用线程将被阻塞。
 
@@ -140,6 +152,7 @@ categories: Tutorials
 
     - **返回值**: 成功返回 `0`，失败返回错误码。
 
+
 - **`pthread_rwlock_unlock`**: 释放读锁或写锁。
 
     ```c
@@ -148,6 +161,7 @@ categories: Tutorials
 
     - **返回值**: 成功返回 `0`，失败返回错误码。
 
+
 - **`pthread_rwlock_destroy`**: 销毁读写锁，释放其资源。
 
     ```c
@@ -155,6 +169,7 @@ categories: Tutorials
     ```
 
     - **返回值**: 成功返回 `0`，失败返回错误码。
+
 
 ### 4. 信号量 (Semaphore)
 
@@ -171,6 +186,7 @@ categories: Tutorials
     - `value`: 信号量的初始值。
     - **返回值**: 成功返回 `0`，失败返回 `-1`。
 
+
 - **`sem_wait`**: 减少信号量的值。如果信号量的值为 `0`，调用线程将被阻塞，直到信号量的值大于 `0`。
 
     ```c
@@ -178,6 +194,7 @@ categories: Tutorials
     ```
 
     - **返回值**: 成功返回 `0`，失败返回 `-1`。
+
 
 - **`sem_post`**: 增加信号量的值。如果有线程在等待信号量，它将被唤醒。
 
@@ -187,6 +204,7 @@ categories: Tutorials
 
     - **返回值**: 成功返回 `0`，失败返回 `-1`。
 
+
 - **`sem_destroy`**: 销毁信号量，释放其资源。
 
     ```c
@@ -194,6 +212,7 @@ categories: Tutorials
     ```
 
     - **返回值**: 成功返回 `0`，失败返回 `-1`。
+
 
 ### 5. 屏障 (Barrier)
 
@@ -210,6 +229,7 @@ categories: Tutorials
     - `count`: 要同步的线程数量。
     - **返回值**: 成功返回 `0`，失败返回错误码。
 
+
 - **`pthread_barrier_wait`**: 使调用线程在屏障上等待，直到指定数量的线程都调用了该函数。
 
     ```c
@@ -218,6 +238,7 @@ categories: Tutorials
 
     - **返回值**: 所有线程都到达时返回 `PTHREAD_BARRIER_SERIAL_THREAD`，否则返回 `0`。
 
+
 - **`pthread_barrier_destroy`**: 销毁屏障对象。
 
     ```c
@@ -225,6 +246,7 @@ categories: Tutorials
     ```
 
     - **返回值**: 成功返回 `0`，失败返回错误码。
+
 
 ### 6. 自旋锁 (Spinlock)
 
@@ -240,6 +262,7 @@ categories: Tutorials
     - `pshared`: 共享标志（0表示仅用于同一进程中的线程）。
     - **返回值**: 成功返回 `0`，失败返回错误码。
 
+
 - **`pthread_spin_lock`**: 获取自旋锁。如果锁不可用，调用线程会忙等待。
 
     ```c
@@ -248,15 +271,15 @@ categories: Tutorials
 
     - **返回值**: 成功返回 `0`，失败返回错误码。
 
+
 - **`pthread_spin_unlock`**: 释放自旋锁。
 
     ```c
     int pthread_spin_unlock(pthread_spinlock_t *lock);
     ```
 
-    - **
+    - **返回值**: 成功返回 `0`，失败返回错误码。
 
-返回值**: 成功返回 `0`，失败返回错误码。
 
 - **`pthread_spin_destroy`**: 销毁自旋锁，释放其资源。
 
