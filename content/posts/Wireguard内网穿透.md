@@ -251,7 +251,7 @@ sudo wg-autostart enable wg0
 ```ini
 [Interface]
 PrivateKey = <外网机器的私钥>
-Address = 10.0.0.70/24 # 外网机器在 WireGuard 隧道中的 IP
+Address = 10.0.0.100/24 # 外网机器在 WireGuard 隧道中的 IP
 
 [Peer]
 PublicKey = <公网服务器的公钥>
