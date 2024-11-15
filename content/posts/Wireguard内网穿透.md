@@ -20,13 +20,12 @@ categories: Tutorials
 首先，需要在服务器和客户端上安装 WireGuard 软件。WireGuard 可以在多种操作系统上运行，包括 Linux、Windows 和 macOS。
 
 - **在 Ubuntu 上安装 WireGuard：**
-  ```bash
+```bash
 sudo apt update
 sudo apt install wireguard
-  ```
+```
 - **在 Windows 上安装：**
   访问 [WireGuard 官方下载页面](https://www.wireguard.com/install/) 下载并安装 WireGuard。
-
 - **在 macOS 上安装：**
   可以通过 Homebrew 安装：
 ```bash
