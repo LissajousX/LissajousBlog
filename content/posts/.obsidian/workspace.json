@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "size_of 的各种事项.md",
+                "file": "sizeof 的各种事项.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "size_of 的各种事项"
+              "title": "sizeof 的各种事项"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "size_of 的各种事项.md",
+                "file": "sizeof 的各种事项.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "size_of 的各种事项 的反向链接列表"
+              "title": "sizeof 的各种事项 的反向链接列表"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "size_of 的各种事项.md",
+                "file": "sizeof 的各种事项.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "size_of 的各种事项 的出链列表"
+              "title": "sizeof 的各种事项 的出链列表"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "size_of 的各种事项.md"
+                "file": "sizeof 的各种事项.md"
               },
               "icon": "lucide-list",
-              "title": "size_of 的各种事项 的大纲"
+              "title": "sizeof 的各种事项 的大纲"
             }
           }
         ],
@@ -165,7 +165,7 @@
   },
   "active": "9565ed72cbdbf3da",
   "lastOpenFiles": [
-    "size_of 的各种事项.md",
+    "sizeof 的各种事项.md",
     "Wireguard内网穿透.md",
     "DEBUGLOG.md",
     "客户端教程.md",
