@@ -7,6 +7,8 @@ images:
   - /images/book.png
 tags:
   - tutorial
+  - DL
+  - AI
 categories: Tutorials
 ---
 [开源大模型食用指南](https://github.com/datawhalechina/self-llm?tab=readme-ov-file)
