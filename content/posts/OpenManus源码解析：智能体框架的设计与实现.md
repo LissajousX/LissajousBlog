@@ -11,9 +11,9 @@ tags:
 categories: Tutorials
 ---
 
-## 一、项目概述
+## **一、项目概述
 
-### 1.1 OpenManus的定位与设计目标
+### **1.1 OpenManus的定位与设计目标
 
 OpenManus是一个基于大语言模型（LLM）的智能体框架，它的设计目标是创建一个灵活、可扩展且功能强大的系统，使AI能够通过各种工具与外部世界交互，从而解决复杂的任务。
 
@@ -21,40 +21,40 @@ OpenManus是一个基于大语言模型（LLM）的智能体框架，它的设�
 
 OpenManus的核心理念是"思考-行动"循环，即智能体先分析当前状态和任务需求（思考），然后选择并执行适当的工具（行动），接着基于执行结果进行下一轮思考。这种循环使智能体能够逐步解决复杂问题，同时保持对任务的连贯理解。
 
-### 1.2 项目结构概览
+### **1.2 项目结构概览
 
 OpenManus的项目结构清晰而模块化，主要包括以下几个部分：
 ```shell
 app/
-├── agent/                # 智能体实现
-│   ├── base.py           # 基础智能体
-│   ├── react.py          # 思考-行动智能体
-│   ├── toolcall.py       # 工具调用智能体
-│   └── manus.py          # Manus智能体
-├── tool/                 # 工具实现
-│   ├── base.py           # 基础工具
-│   ├── bash.py           # 命令行工具
-│   ├── browser_use_tool.py # 浏览器工具
-│   ├── file_saver.py     # 文件保存工具
-│   ├── python_execute.py # Python执行工具
-│   ├── terminate.py      # 终止工具
-│   └── tool_collection.py # 工具集合
-├── flow/                 # 流程控制
-│   ├── base.py           # 基础流程
-│   ├── planning.py       # 规划流程
-│   └── flow_factory.py   # 流程工厂
-├── prompt/               # 提示模板
-│   └── manus.py          # Manus提示
-├── llm.py                # LLM接口
-├── memory.py             # 记忆系统
-└── message.py            # 消息定义
-main.py                   # 主入口
+├── agent/                # **智能体实现
+│   ├── base.py           # **基础智能体
+│   ├── react.py          # **思考-行动智能体
+│   ├── toolcall.py       # **工具调用智能体
+│   └── manus.py          # **Manus智能体
+├── tool/                 # **工具实现
+│   ├── base.py           # **基础工具
+│   ├── bash.py           # **命令行工具
+│   ├── browser_use_tool.py # **浏览器工具
+│   ├── file_saver.py     # **文件保存工具
+│   ├── python_execute.py # **Python执行工具
+│   ├── terminate.py      # **终止工具
+│   └── tool_collection.py # **工具集合
+├── flow/                 # **流程控制
+│   ├── base.py           # **基础流程
+│   ├── planning.py       # **规划流程
+│   └── flow_factory.py   # **流程工厂
+├── prompt/               # **提示模板
+│   └── manus.py          # **Manus提示
+├── llm.py                # **LLM接口
+├── memory.py             # **记忆系统
+└── message.py            # **消息定义
+main.py                   # **主入口
 ```
 这种结构使得各个组件之间的职责划分清晰，便于维护和扩展。
 
-### 1.3 核心组件介绍
+### **1.3 核心组件介绍
 
-#### 1) 智能体系统
+#### **1) 智能体系统
 
 智能体系统是OpenManus的核心，它采用了层次化的设计：
 
@@ -65,7 +65,7 @@ main.py                   # 主入口
 
 这种层次化设计使得代码更加模块化和可扩展，每个层次只需关注自己的职责。
 
-#### 2) 工具系统
+#### **2) 工具系统
 
 工具系统为智能体提供了与外部世界交互的能力：
 
@@ -75,7 +75,7 @@ main.py                   # 主入口
 
 每个工具都有明确的名称、描述和参数规范，使LLM能够正确选择和使用它们。
 
-#### 3) 记忆系统
+#### **3) 记忆系统
 
 记忆系统使智能体能够在多个步骤中保持上下文连贯性：
 
@@ -84,7 +84,7 @@ main.py                   # 主入口
 
 记忆系统记录了用户输入、LLM响应和工具执行结果，使智能体能够基于历史信息做出决策。
 
-#### 4) LLM接口
+#### **4) LLM接口
 
 LLM接口负责与大语言模型（如OpenAI的GPT模型）通信：
 
@@ -93,7 +93,7 @@ LLM接口负责与大语言模型（如OpenAI的GPT模型）通信：
 
 LLM接口将智能体的记忆和工具信息传递给LLM，并解析LLM的响应。
 
-#### 5) 流程控制
+#### **5) 流程控制
 
 流程控制组件管理不同类型的执行流程：
 
@@ -103,7 +103,7 @@ LLM接口将智能体的记忆和工具信息传递给LLM，并解析LLM的响�
 
 流程控制使OpenManus能够支持不同的执行模式，如规划式执行。
 
-### 1.4 技术特点
+### **1.4 技术特点
 
 OpenManus具有几个显著的技术特点：
 
@@ -118,13 +118,13 @@ OpenManus具有几个显著的技术特点：
 通过这个项目，可以看到AI智能体如何从简单的对话系统演变为能够执行具体操作的助手，这代表了AI应用的一个重要发展方向。在接下来的章节中，下文将深入探讨OpenManus的各个组件和机制，揭示其内部工作原理。
 
 ---
-## 二、智能体的层次化设计
+## **二、智能体的层次化设计
 
-### 2.1 BaseAgent：基础智能体的实现
+### **2.1 BaseAgent：基础智能体的实现
 
 BaseAgent是所有智能体的基类，位于`app/agent/base.py`中。它提供了智能体的基本功能：
 
-#### 核心属性
+#### **核心属性
 
 - `name`：智能体的名称
 - `description`：智能体的描述
@@ -134,7 +134,7 @@ BaseAgent是所有智能体的基类，位于`app/agent/base.py`中。它提供�
 - `memory`：智能体的记忆存储
 - `state`：当前智能体状态（IDLE、RUNNING、FINISHED、ERROR）
 
-#### 主要方法
+#### **主要方法
 
 - `run(request)`：执行智能体的主循环
 - `step()`：执行单个步骤（抽象方法，需要子类实现）
@@ -156,18 +156,18 @@ async def run(self, request: Optional[str] = None) -> str:
             self.current_step += 1
             step_result = await self.step()
             
-            # 检查是否陷入循环
+            # **检查是否陷入循环
             if self.is_stuck():
                 self.handle_stuck_state()
                 
             results.append(f"Step {self.current_step}: {step_result}")
 ```
 
-### 2.2 ReActAgent：思考-行动循环模式
+### **2.2 ReActAgent：思考-行动循环模式
 
 ReActAgent继承自BaseAgent，位于`app/agent/react.py`中。它实现了思考-行动循环模式，这是一种强大的智能体决策框架。
 
-#### 核心方法
+#### **核心方法
 
 - `think()`：处理当前状态并决定下一步行动（抽象方法）
 - `act()`：执行决定的行动（抽象方法）
@@ -177,24 +177,24 @@ ReActAgent的`step`方法实现了思考-行动循环：
 ```python
 async def step(self) -> str:
     """执行单个步骤：思考和行动。"""
-    should_act = await self.think()  # 先思考
+    should_act = await self.think()  # **先思考
     if not should_act:
         return "思考完成 - 无需行动"
-    return await self.act()  # 再行动
+    return await self.act()  # **再行动
 ```
 这种思考-行动模式非常适合智能体的决策过程，它模拟了人类的思考方式：先分析情况，再采取行动。
-### 2.3 ToolCallAgent：工具调用机制
+### **2.3 ToolCallAgent：工具调用机制
 
 ToolCallAgent继承自ReActAgent，位于`app/agent/toolcall.py`中。它实现了工具调用机制，使智能体能够使用各种工具来完成任务。
 
-#### 核心属性
+#### **核心属性
 
 - `available_tools`：可用工具集合
 - `tool_choices`：工具选择模式（"none"、"auto"、"required"）
 - `special_tool_names`：特殊工具名称列表
 - `tool_calls`：工具调用列表
 
-#### 主要方法
+#### **主要方法
 
 - `think()`：实现了ReActAgent的抽象方法，使用LLM决定使用哪些工具
 - `act()`：实现了ReActAgent的抽象方法，执行工具调用
@@ -208,7 +208,7 @@ async def think(self) -> bool:
         user_msg = Message.user_message(self.next_step_prompt)
         self.messages += [user_msg]
 
-    # 获取带工具选项的响应
+    # **获取带工具选项的响应
     response = await self.llm.ask_tool(
         messages=self.messages,
         system_msgs=[Message.system_message(self.system_prompt)]
@@ -219,7 +219,7 @@ async def think(self) -> bool:
     )
     self.tool_calls = response.tool_calls
     
-    # 记录响应信息
+    # **记录响应信息
     logger.info(f"✨ {self.name}'s thoughts: {response.content}")
     logger.info(
         f"🛠️ {self.name} selected {len(response.tool_calls) if response.tool_calls else 0} tools to use"
@@ -241,7 +241,7 @@ async def act(self) -> str:
             f"🎯 Tool '{command.function.name}' completed its mission! Result: {result}"
         )
 
-        # 将工具响应添加到记忆中
+        # **将工具响应添加到记忆中
         tool_msg = Message.tool_message(
             content=result, tool_call_id=command.id, name=command.function.name
         )
@@ -251,11 +251,11 @@ async def act(self) -> str:
     return "\n\n".join(results)
 ```
 
-### 2.4 Manus：最终智能体的集成
+### **2.4 Manus：最终智能体的集成
 
 Manus继承自ToolCallAgent，位于`app/agent/manus.py`中。它是用户直接交互的主要智能体，集成了多种工具。
 
-#### 核心属性
+#### **核心属性
 
 - `name`："Manus"
 - `description`："一个可以使用多种工具解决各种任务的多功能智能体"
@@ -273,7 +273,7 @@ class Manus(ToolCallAgent):
     system_prompt: str = SYSTEM_PROMPT
     next_step_prompt: str = NEXT_STEP_PROMPT
 
-    # 添加通用工具到工具集合
+    # **添加通用工具到工具集合
     available_tools: ToolCollection = Field(
         default_factory=lambda: ToolCollection(
             PythonExecute(), GoogleSearch(), BrowserUseTool(), FileSaver(), Terminate()
@@ -283,9 +283,9 @@ class Manus(ToolCallAgent):
     max_steps: int = 20
 ```
 
-### 2.5 总结
+### **2.5 总结
 
-#### 层次结构的优势
+#### **层次结构的优势
 
 1. **代码重用**：每个层次只需实现自己特有的功能，其他功能可以从父类继承。
 2. **关注点分离**：
@@ -297,7 +297,7 @@ class Manus(ToolCallAgent):
 4. **维护性**：每个层次的代码都相对简单和专注，使得代码更容易理解和维护。
 5. **测试性**：可以独立测试每个层次的功能，简化测试过程。
 
-#### 智能体执行流程
+#### **智能体执行流程
 
 当用户输入一个请求时，执行流程如下：
 1. 请求被传递给Manus智能体的`run`方法（继承自BaseAgent）
@@ -310,10 +310,10 @@ class Manus(ToolCallAgent):
 这种层次化设计使得OpenManus项目能够以一种模块化、可维护的方式实现复杂的智能体行为。
 
 ---
-## 三、工具系统的实现
+## **三、工具系统的实现
 
 OpenManus中的工具是经过精心设计的软件组件，它们主要是规范了输入输出的功能模块，而不是完全智能化的应用。下文来详细解析这些工具的实现机制。
-### 3.1 BaseTool：工具的基础抽象
+### **3.1 BaseTool：工具的基础抽象
 
 所有工具都继承自`BaseTool`抽象基类，这个基类定义了工具的基本结构：
 ```python
@@ -345,8 +345,8 @@ class BaseTool(ABC, BaseModel):
 
 这个架构确保了所有工具都有统一的接口，方便智能体调用和管理。
 
-### 3.2 主要工具详解
-#### PythonExecute：代码执行工具
+### **3.2 主要工具详解
+#### **PythonExecute：代码执行工具
 
 `PythonExecute`工具允许执行Python代码：
 ```python
@@ -371,16 +371,16 @@ class PythonExecute(BaseTool):
     async def execute(self, code: str, timeout: int = 5) -> Dict:
         """执行Python代码"""
         try:
-            # 创建一个安全的执行环境
+            # **创建一个安全的执行环境
             locals_dict = {}
             
-            # 使用asyncio.wait_for实现超时控制
+            # **使用asyncio.wait_for实现超时控制
             await asyncio.wait_for(
                 self._execute_code(code, locals_dict),
                 timeout=timeout
             )
             
-            # 提取执行结果
+            # **提取执行结果
             result = locals_dict.get("result", None)
             return {"result": result}
         except asyncio.TimeoutError:
@@ -390,7 +390,7 @@ class PythonExecute(BaseTool):
     
     async def _execute_code(self, code: str, locals_dict: Dict):
         """在隔离环境中执行代码"""
-        # 添加一些安全限制
+        # **添加一些安全限制
         restricted_globals = {
             "__builtins__": {
                 name: getattr(__builtins__, name)
@@ -398,13 +398,13 @@ class PythonExecute(BaseTool):
             }
         }
         
-        # 执行代码
+        # **执行代码
         exec(code, restricted_globals, locals_dict)
 ```
 
 这个工具主要是一个代码执行器，它创建了一个受限的执行环境，并使用Python的`exec`函数来执行代码。它不是智能化的应用，而是一个规范了输入输出的功能模块。
 
-#### GoogleSearch：搜索工具
+#### **GoogleSearch：搜索工具
 
 `GoogleSearch`工具允许执行网络搜索：
 ```python
@@ -431,10 +431,10 @@ class GoogleSearch(BaseTool):
     async def execute(self, query: str, num_results: int = 10) -> List[str]:
         """执行Google搜索"""
         try:
-            # 调用搜索客户端
+            # **调用搜索客户端
             search_results = await self.search_client.search(query, num_results=num_results)
             
-            # 格式化结果
+            # **格式化结果
             formatted_results = []
             for i, result in enumerate(search_results, 1):
                 title = result.get("title", "无标题")
@@ -449,7 +449,7 @@ class GoogleSearch(BaseTool):
 
 这个工具是一个搜索接口封装，它调用`GoogleSearchClient`来执行实际的搜索操作。`GoogleSearchClient`可能是一个API客户端，用于调用Google搜索API或其他搜索服务。
 
-#### BrowserUseTool：浏览器控制工具
+#### **BrowserUseTool：浏览器控制工具
 
 `BrowserUseTool`工具允许控制浏览器：
 ```python
@@ -472,7 +472,7 @@ class BrowserUseTool(BaseTool):
                 "type": "string",
                 "description": "用于'navigate'或'new_tab'操作的URL"
             },
-            # 其他参数...
+            # **其他参数...
         },
         "required": ["action"]
     }
@@ -483,10 +483,10 @@ class BrowserUseTool(BaseTool):
         """执行浏览器操作"""
         async with self.lock:
             try:
-                # 确保浏览器已初始化
+                # **确保浏览器已初始化
                 context = await self._ensure_browser_initialized()
                 
-                # 根据操作类型执行不同的浏览器操作
+                # **根据操作类型执行不同的浏览器操作
                 if action == "navigate":
                     if not url:
                         return ToolResult(error="URL is required for 'navigate' action")
@@ -494,9 +494,9 @@ class BrowserUseTool(BaseTool):
                     return ToolResult(output=f"Navigated to {url}")
                 
                 elif action == "click":
-                    # 点击操作实现...
+                    # **点击操作实现...
                 
-                # 其他操作实现...
+                # **其他操作实现...
                 
             except Exception as e:
                 return ToolResult(error=f"Browser action '{action}' failed: {str(e)}")
@@ -504,7 +504,7 @@ class BrowserUseTool(BaseTool):
 
 这个工具是一个浏览器自动化接口，它使用`BrowserUseBrowser`类（可能基于Playwright或Selenium）来控制浏览器。它提供了一组标准化的操作（如导航、点击、输入文本等），但本身并不包含智能化的逻辑。
 
-#### FileSaver：文件保存工具
+#### **FileSaver：文件保存工具
 
 `FileSaver`工具允许保存内容到文件：
 ```python
@@ -535,12 +535,12 @@ class FileSaver(BaseTool):
     async def execute(self, content: str, file_path: str, mode: str = "w") -> str:
         """保存内容到文件"""
         try:
-            # 确保目录存在
+            # **确保目录存在
             directory = os.path.dirname(file_path)
             if directory and not os.path.exists(directory):
                 os.makedirs(directory)
 
-            # 写入文件
+            # **写入文件
             async with aiofiles.open(file_path, mode, encoding="utf-8") as file:
                 await file.write(content)
 
@@ -551,7 +551,7 @@ class FileSaver(BaseTool):
 
 这个工具是一个简单的文件操作接口，它使用`aiofiles`库（异步文件I/O）来保存内容到文件。它是一个非常基础的功能模块，没有智能化的逻辑。
 
-#### Terminate：终止工具
+#### **Terminate：终止工具
 
 `Terminate`工具用于结束智能体的执行：
 ```python
@@ -577,18 +577,18 @@ class Terminate(BaseTool):
 
 这个工具非常简单，它只是返回一个状态消息。实际的终止逻辑是在`ToolCallAgent`的`_handle_special_tool`方法中实现的，它会将智能体的状态设置为`FINISHED`。
 
-### 3.3 工具与智能体的协作模式
+### **3.3 工具与智能体的协作模式
 
 在OpenManus框架中，工具与智能体之间形成了一种独特而高效的协作模式，这种模式可以概括为"智能体决策，工具执行"。这种协作充分发挥了大语言模型的推理能力和专用工具的执行能力，形成了一个强大的组合。
 
-#### 决策与执行的分离
+#### **决策与执行的分离
 
 OpenManus中最核心的协作理念是将决策与执行明确分离：
 - **智能体负责决策**：利用LLM的强大理解和推理能力，分析任务需求，选择合适的工具，确定工具参数，解释工具执行结果。
 - **工具负责执行**：接收智能体提供的参数，执行特定功能，返回执行结果，不参与决策过程。
 这种分离使系统既有LLM的灵活性和创造性，又有专用工具的可靠性和确定性。
 
-#### 协作流程
+#### **协作流程
 
 工具与智能体的协作流程可以分为以下几个步骤：
 
@@ -599,7 +599,7 @@ OpenManus中最核心的协作理念是将决策与执行明确分离：
 5. **结果处理**：智能体接收工具执行结果，进行分析和解释。
 6. **下一步决策**：智能体根据结果决定下一步行动。
 
-#### 接口标准化
+#### **接口标准化
 
 为了使协作顺畅，OpenManus对工具接口进行了标准化：
 
@@ -609,7 +609,7 @@ OpenManus中最核心的协作理念是将决策与执行明确分离：
 
 这种标准化使得添加新工具变得简单，只需实现标准接口即可。
 
-#### 错误处理与恢复
+#### **错误处理与恢复
 
 协作模式中的一个重要方面是错误处理与恢复：
 
@@ -621,22 +621,22 @@ OpenManus中最核心的协作理念是将决策与执行明确分离：
 
 ---
 
-## 四、工具选择与使用的机制
+## **四、工具选择与使用的机制
 
-### 4.1 工具选择的实现
+### **4.1 工具选择的实现
 在OpenManus中，工具选择主要在`ToolCallAgent`类的`think`方法中实现。
 
-#### 工具选择的核心代码
+#### **工具选择的核心代码
 
 `ToolCallAgent`的`think`方法是工具选择的核心：
 ```python
 async def think(self) -> bool:
-    # 添加下一步提示到消息列表
+    # **添加下一步提示到消息列表
     if self.next_step_prompt:
         user_msg = Message.user_message(self.next_step_prompt)
         self.messages += [user_msg]
 
-    # 调用LLM获取带工具选择的响应
+    # **调用LLM获取带工具选择的响应
     response = await self.llm.ask_tool(
         messages=self.messages,
         system_msgs=[Message.system_message(self.system_prompt)]
@@ -646,23 +646,23 @@ async def think(self) -> bool:
         tool_choice=self.tool_choices,
     )
     
-    # 保存工具调用信息
+    # **保存工具调用信息
     self.tool_calls = response.tool_calls
     
-    # 记录思考过程
+    # **记录思考过程
     logger.info(f"✨ {self.name}'s thoughts: {response.content}")
     logger.info(
         f"🛠️ {self.name} selected {len(response.tool_calls) if response.tool_calls else 0} tools to use"
     )
     
-    # 将LLM响应添加到记忆中
+    # **将LLM响应添加到记忆中
     self.memory.add_message(Message.assistant_message(response.content, response.tool_calls))
     
-    # 如果有工具调用，返回True表示需要执行行动
+    # **如果有工具调用，返回True表示需要执行行动
     return bool(self.tool_calls)
 ```
 
-#### 工具选择的关键步骤
+#### **工具选择的关键步骤
 
 - **1) 准备工具列表**
 
@@ -712,33 +712,33 @@ async def ask_tool(
 ) -> ToolResponse:
     """Ask the LLM with tool calling capability."""
     
-    # 构建请求参数
+    # **构建请求参数
     params = {
         "model": self.model,
         "messages": self._prepare_messages(messages, system_msgs),
     }
     
-    # 添加工具信息
+    # **添加工具信息
     if tools:
         params["tools"] = tools
         
-    # 设置工具选择模式
+    # **设置工具选择模式
     if tool_choice:
         if tool_choice == "auto":
             params["tool_choice"] = "auto"
         elif tool_choice == "required":
             params["tool_choice"] = {"type": "function"}
     
-    # 发送请求给OpenAI API
+    # **发送请求给OpenAI API
     response = await self.client.chat.completions.create(**params)
     
-    # 解析响应
+    # **解析响应
     return self._parse_tool_response(response)
 ```
 
 LLM会根据当前任务和上下文，选择最合适的工具来完成任务。这个选择过程是由LLM的模型能力决定的，它会分析任务需求并选择合适的工具。
 
-#### 工具选择的具体例子
+#### **工具选择的具体例子
 假设用户输入："帮我搜索关于Python异步编程的信息"
 
 1. 这个请求被传递给Manus智能体
@@ -764,38 +764,38 @@ LLM会根据当前任务和上下文，选择最合适的工具来完成任务�
 ```
 5. `think`方法将这个工具调用信息保存在`self.tool_calls`中，并返回`True`表示需要执行行动
 
-### 4.2 工具使用的实现
+### **4.2 工具使用的实现
 一旦工具被选择，下一步就是使用工具。这主要在`ToolCallAgent`类的`act`方法中实现。
-#### 工具使用的核心代码
+#### **工具使用的核心代码
 ```python
 async def act(self) -> str:
-    # 如果没有工具调用，直接返回
+    # **如果没有工具调用，直接返回
     if not self.tool_calls:
         if self.tool_choices == "required":
             raise ValueError(TOOL_CALL_REQUIRED)
         return self.messages[-1].content or "No content or commands to execute"
 
-    # 执行每个工具调用
+    # **执行每个工具调用
     results = []
     for command in self.tool_calls:
-        # 执行工具
+        # **执行工具
         result = await self.execute_tool(command)
         logger.info(
             f"🎯 Tool '{command.function.name}' completed its mission! Result: {result}"
         )
 
-        # 将工具响应添加到记忆中
+        # **将工具响应添加到记忆中
         tool_msg = Message.tool_message(
             content=result, tool_call_id=command.id, name=command.function.name
         )
         self.memory.add_message(tool_msg)
         results.append(result)
 
-    # 返回所有工具执行结果
+    # **返回所有工具执行结果
     return "\n\n".join(results)
 ```
 
-#### 工具使用的关键步骤
+#### **工具使用的关键步骤
 
 - **1) 执行工具调用**
 
@@ -806,11 +806,11 @@ async def execute_tool(self, command: ToolCall) -> str:
     name = command.function.name
     args = command.function.arguments
     
-    # 处理特殊工具
+    # **处理特殊工具
     if name in self.special_tool_names:
         return await self._handle_special_tool(name, args)
     
-    # 执行普通工具
+    # **执行普通工具
     try:
         result = await self.available_tools.execute(name=name, tool_input=args)
         return result
@@ -825,12 +825,12 @@ async def execute_tool(self, command: ToolCall) -> str:
 ```python
 async def execute(self, *, name: str, tool_input: Dict[str, Any] = None) -> ToolResult:
     """Execute a tool by name with given input."""
-    # 查找工具
+    # **查找工具
     tool = self.tool_map.get(name)
     if not tool:
         return ToolFailure(error=f"Tool {name} is invalid")
     
-    # 执行工具
+    # **执行工具
     try:
         result = await tool(**tool_input)
         return result
@@ -844,10 +844,10 @@ async def execute(self, *, name: str, tool_input: Dict[str, Any] = None) -> Tool
 async def execute(self, query: str, num_results: int = 10) -> List[str]:
     """Execute a Google search with the given query."""
     try:
-        # 调用Google搜索API
+        # **调用Google搜索API
         search_results = await self.search_client.search(query, num_results=num_results)
         
-        # 格式化结果
+        # **格式化结果
         formatted_results = []
         for i, result in enumerate(search_results, 1):
             title = result.get("title", "No title")
@@ -860,7 +860,7 @@ async def execute(self, query: str, num_results: int = 10) -> List[str]:
         return f"Error performing Google search: {str(e)}"
 ```
 
-#### 工具使用的具体例子
+#### **工具使用的具体例子
 
 继续上面的例子，用户要求搜索Python异步编程的信息：
 
@@ -868,7 +868,7 @@ async def execute(self, query: str, num_results: int = 10) -> List[str]:
 2. 接下来，`act`方法被调用，它会遍历`self.tool_calls`中的每个工具调用
 3. 对于`GoogleSearch`工具调用，`execute_tool`方法被调用：
 ```python
-result = await self.execute_tool(command)  # command是GoogleSearch工具调用
+result = await self.execute_tool(command)  # **command是GoogleSearch工具调用
 ```
 
 4. `execute_tool`方法找到`GoogleSearch`工具并执行：
@@ -902,7 +902,7 @@ result = await google_search_tool.execute(
 
 7. 这个结果被添加到智能体的记忆中，并返回给用户
 
-#### 特殊工具的处理
+#### **特殊工具的处理
 
 OpenManus还有一些特殊工具，如`Terminate`工具，它们需要特殊处理：
 ```python
@@ -913,7 +913,7 @@ async def _handle_special_tool(self, name: str, args: Dict[str, Any]) -> str:
         self.state = AgentState.FINISHED
         return f"Agent terminated with status: {status}"
     
-    # 其他特殊工具的处理...
+    # **其他特殊工具的处理...
     
     return f"Special tool {name} executed with args: {args}"
 ```
@@ -922,13 +922,13 @@ async def _handle_special_tool(self, name: str, args: Dict[str, Any]) -> str:
 
 ---
 
-## 五、信息的保存、传递与使用
+## **五、信息的保存、传递与使用
 
 在OpenManus中，信息在智能体的多次迭代中通过精心设计的记忆系统进行保存、传递和使用。这个系统确保了智能体能够在多个步骤中保持上下文连贯性，并基于历史信息做出决策。下文将详细解析这个过程。
 
-### 5.1 信息的保存机制
+### **5.1 信息的保存机制
 
-#### 记忆系统的实现
+#### **记忆系统的实现
 
 OpenManus使用`Memory`类来保存信息。这个类在`app/memory.py`中定义：
 
@@ -954,7 +954,7 @@ class Memory:
 
 `Memory`类非常简单，它主要是一个消息列表的包装器，提供了添加、获取和清空消息的方法。
 
-#### 消息的结构
+#### **消息的结构
 
 每个消息都是`Message`类的实例，这个类定义了消息的结构：
 ```python
@@ -1004,7 +1004,7 @@ class Message:
 
 每个消息都有一个角色（系统、用户、助手或工具）和内容。助手消息可能还包含工具调用信息，工具消息包含工具调用ID和工具名称。
 
-#### 信息保存的时机
+#### **信息保存的时机
 
 信息在多个地方被保存到记忆中：
 
@@ -1012,11 +1012,11 @@ class Message:
 
 当用户提供输入时，它会被保存到记忆中：
 ```python
-# BaseAgent.run方法
+# **BaseAgent.run方法
 if request:
     self.update_memory("user", request)
 
-# BaseAgent.update_memory方法
+# **BaseAgent.update_memory方法
 def update_memory(self, role: str, content: str):
     """更新记忆"""
     if role == "user":
@@ -1031,7 +1031,7 @@ def update_memory(self, role: str, content: str):
 
 当LLM生成响应时，它会被保存到记忆中：
 ```python
-# ToolCallAgent.think方法
+# **ToolCallAgent.think方法
 self.memory.add_message(Message.assistant_message(response.content, response.tool_calls))
 ```
 
@@ -1039,22 +1039,22 @@ self.memory.add_message(Message.assistant_message(response.content, response.too
 
 当工具执行完成时，结果会被保存到记忆中：
 ```python
-# ToolCallAgent.act方法
+# **ToolCallAgent.act方法
 tool_msg = Message.tool_message(
     content=result, tool_call_id=command.id, name=command.function.name
 )
 self.memory.add_message(tool_msg)
 ```
 
-### 5.2 信息的传递机制
+### **5.2 信息的传递机制
 
-#### 消息传递给LLM
+#### **消息传递给LLM
 
 在每次调用LLM时，记忆中的消息会被传递给LLM，使其能够了解历史上下文：
 ```python
-# ToolCallAgent.think方法
+# **ToolCallAgent.think方法
 response = await self.llm.ask_tool(
-    messages=self.messages,  # 传递记忆中的所有消息
+    messages=self.messages,  # **传递记忆中的所有消息
     system_msgs=[Message.system_message(self.system_prompt)]
     if self.system_prompt
     else None,
@@ -1065,27 +1065,27 @@ response = await self.llm.ask_tool(
 
 这里的`self.messages`就是记忆中的消息列表。
 
-#### 消息格式转换
+#### **消息格式转换
 
 在传递给LLM之前，消息需要转换为LLM能够理解的格式：
 ```python
-# LLM._prepare_messages方法
+# **LLM._prepare_messages方法
 def _prepare_messages(
     self, messages: List[Message], system_msgs: Optional[List[Message]] = None
 ) -> List[Dict]:
     """准备发送给LLM的消息"""
     prepared_messages = []
     
-    # 添加系统消息
+    # **添加系统消息
     if system_msgs:
         for msg in system_msgs:
             prepared_messages.append({"role": msg.role, "content": msg.content})
     
-    # 添加历史消息
+    # **添加历史消息
     for msg in messages:
         message_dict = {"role": msg.role, "content": msg.content}
         
-        # 添加工具调用信息
+        # **添加工具调用信息
         if msg.role == "assistant" and msg.tool_calls:
             message_dict["tool_calls"] = [
                 {
@@ -1099,7 +1099,7 @@ def _prepare_messages(
                 for tc in msg.tool_calls
             ]
         
-        # 添加工具响应信息
+        # **添加工具响应信息
         if msg.role == "tool":
             message_dict["tool_call_id"] = msg.tool_call_id
             message_dict["name"] = msg.name
@@ -1111,9 +1111,9 @@ def _prepare_messages(
 
 这个方法将`Message`对象转换为包含适当字段的字典，这些字典符合OpenAI API的消息格式要求。
 
-### 5.3 信息的使用机制
+### **5.3 信息的使用机制
 
-#### LLM使用历史信息
+#### **LLM使用历史信息
 
 LLM会使用传递给它的所有历史消息来生成响应。这使得它能够：
 
@@ -1124,7 +1124,7 @@ LLM会使用传递给它的所有历史消息来生成响应。这使得它能�
 
 例如，如果用户要求搜索信息，智能体使用`GoogleSearch`工具获取结果，然后用户要求总结这些结果，LLM会使用记忆中的搜索结果来生成总结，而不需要重新搜索。
 
-#### 记忆长度管理
+#### **记忆长度管理
 
 由于LLM的上下文窗口有限，记忆中的消息数量可能需要限制。OpenManus可能使用以下策略来管理记忆长度：
 
@@ -1134,11 +1134,11 @@ LLM会使用传递给它的所有历史消息来生成响应。这使得它能�
 
 虽然代码中没有明确实现这些策略，但这是处理长期交互的常见做法。
 
-#### 记忆持久化
+#### **记忆持久化
 
 当前的实现中，记忆只存在于内存中，当智能体实例被销毁时记忆也会丢失。为了支持长期记忆，可能需要将记忆持久化到数据库或文件中。
 
-#### 具体例子：多步骤任务执行
+#### **具体例子：多步骤任务执行
 
 下文将通过一个具体例子来说明信息如何在多次迭代中流动：
 
@@ -1168,7 +1168,7 @@ LLM会使用传递给它的所有历史消息来生成响应。这使得它能�
 
 在这个过程中，信息不断被添加到记忆中，并在每次LLM调用时传递给LLM，使其能够基于完整的历史上下文做出决策。
 
-## 5.4 总结
+## **5.4 总结
 OpenManus中的信息通过记忆系统在多次迭代中流动。用户输入、LLM响应和工具执行结果都被保存到记忆中，并在每次LLM调用时传递给LLM。这使得智能体能够保持上下文连贯性，累积知识，分解任务，并从错误中恢复。
 
 这种信息保存、传递和使用机制有几个重要优势：
@@ -1182,13 +1182,13 @@ OpenManus中的信息通过记忆系统在多次迭代中流动。用户输入�
 
 ---
 
-## 六、错误处理与容错机制
+## **六、错误处理与容错机制
 
 在OpenManus中，确保LLM给出正确响应以及处理错误响应是一个重要的环节
 
-### 6.1 确保LLM给出正确响应的机制
+### **6.1 确保LLM给出正确响应的机制
 
-#### 系统提示和指令
+#### **系统提示和指令
 
 OpenManus通过精心设计的系统提示来引导LLM生成正确的响应。在`Manus`类中，系统提示定义如下：
 ```python
@@ -1242,7 +1242,7 @@ Note that the environment does NOT support interactive session commands (e.g. py
 """
 ```
 
-#### 工具参数验证
+#### **工具参数验证
 
 每个工具都定义了明确的参数规范，这些规范会在调用LLM时传递给它：
 ```python
@@ -1264,11 +1264,11 @@ parameters: dict = {
 
 这些参数规范告诉LLM每个工具需要哪些参数，哪些是必需的，以及它们的类型和描述。
 
-#### 工具选择模式
+#### **工具选择模式
 
 `ToolCallAgent`类提供了不同的工具选择模式：
 ```python
-tool_choices: str = "auto"  # 可以是"none"、"auto"或"required"
+tool_choices: str = "auto"  # **可以是"none"、"auto"或"required"
 ```
 
 - `"none"`：不要求LLM使用工具
@@ -1284,11 +1284,11 @@ if tool_choice:
         params["tool_choice"] = {"type": "function"}
 ```
 
-### 6.2 处理不正确响应的机制
+### **6.2 处理不正确响应的机制
 
 尽管有上述机制，LLM仍可能给出不正确的响应。OpenManus通过多层错误处理来应对这种情况：
 
-#### 响应解析和验证
+#### **响应解析和验证
 
 在`LLM`类的`_parse_tool_response`方法中，会解析和验证LLM的响应：
 ```python
@@ -1297,12 +1297,12 @@ def _parse_tool_response(self, response: ChatCompletion) -> ToolResponse:
     choice = response.choices[0]
     message = choice.message
     
-    # 解析工具调用
+    # **解析工具调用
     tool_calls = []
     if message.tool_calls:
         for tc in message.tool_calls:
             try:
-                # 解析工具调用参数
+                # **解析工具调用参数
                 args = json.loads(tc.function.arguments)
                 tool_calls.append(
                     ToolCall(
@@ -1316,7 +1316,7 @@ def _parse_tool_response(self, response: ChatCompletion) -> ToolResponse:
             except json.JSONDecodeError:
                 logger.error(f"Failed to parse tool call arguments: {tc.function.arguments}")
     
-    # 返回解析后的响应
+    # **返回解析后的响应
     return ToolResponse(
         content=message.content or "",
         tool_calls=tool_calls,
@@ -1325,7 +1325,7 @@ def _parse_tool_response(self, response: ChatCompletion) -> ToolResponse:
 
 这个方法会尝试解析LLM返回的工具调用参数，如果解析失败（例如，参数不是有效的JSON），会记录错误但不会中断执行。
 
-#### 工具执行错误处理
+#### **工具执行错误处理
 
 在`ToolCallAgent`的`execute_tool`方法中，会捕获工具执行过程中的任何异常：
 ```python
@@ -1334,44 +1334,44 @@ async def execute_tool(self, command: ToolCall) -> str:
     name = command.function.name
     args = command.function.arguments
     
-    # 处理特殊工具
+    # **处理特殊工具
     if name in self.special_tool_names:
         return await self._handle_special_tool(name, args)
     
-    # 执行普通工具
+    # **执行普通工具
     try:
         result = await self.available_tools.execute(name=name, tool_input=args)
         return result
     except Exception as e:
         error_msg = f"Error executing tool {name}: {str(e)}"
         logger.error(error_msg)
-        return error_msg  # 返回错误信息而不是抛出异常
+        return error_msg  # **返回错误信息而不是抛出异常
 ```
 
 如果工具执行失败，会返回一个错误消息，而不是中断整个执行流程。
 
-#### 工具参数验证
+#### **工具参数验证
 
 在`ToolCollection`的`execute`方法中，会检查工具是否存在：
 ```python
 async def execute(self, *, name: str, tool_input: Dict[str, Any] = None) -> ToolResult:
     """Execute a tool by name with given input."""
-    # 查找工具
+    # **查找工具
     tool = self.tool_map.get(name)
     if not tool:
-        return ToolFailure(error=f"Tool {name} is invalid")  # 返回错误结果
+        return ToolFailure(error=f"Tool {name} is invalid")  # **返回错误结果
     
-    # 执行工具
+    # **执行工具
     try:
         result = await tool(**tool_input)
         return result
     except ToolError as e:
-        return ToolFailure(error=e.message)  # 返回错误结果
+        return ToolFailure(error=e.message)  # **返回错误结果
 ```
 
 如果指定的工具不存在，或者执行过程中抛出`ToolError`异常，会返回一个`ToolFailure`对象，而不是中断执行。
 
-#### 具体工具的参数验证
+#### **具体工具的参数验证
 
 每个工具都可以实现自己的参数验证逻辑。例如，`GoogleSearch`工具会检查查询参数是否有效：
 ```python
@@ -1381,12 +1381,12 @@ async def execute(self, query: str, num_results: int = 10) -> List[str]:
         return "Error: Invalid query parameter"
     
     try:
-        # 执行搜索...
+        # **执行搜索...
     except Exception as e:
         return f"Error performing Google search: {str(e)}"
 ```
 
-#### 卡住状态检测
+#### **卡住状态检测
 
 `BaseAgent`类实现了卡住状态检测机制，用于处理LLM陷入循环的情况：
 ```python
@@ -1395,16 +1395,16 @@ def is_stuck(self) -> bool:
     if len(self.memory.messages) < 4:
         return False
     
-    # 检查最近的消息是否重复
+    # **检查最近的消息是否重复
     recent_messages = self.memory.messages[-4:]
     content_set = set(msg.content for msg in recent_messages)
-    return len(content_set) <= 1  # 如果最近4条消息内容相同，认为卡住了
+    return len(content_set) <= 1  # **如果最近4条消息内容相同，认为卡住了
 
 def handle_stuck_state(self):
     """Handle the case when agent is stuck in a loop."""
     logger.warning("Agent appears to be stuck in a loop. Adding intervention...")
     
-    # 添加干预消息
+    # **添加干预消息
     intervention_msg = Message.system_message(
         "You appear to be stuck in a loop. Please try a different approach."
     )
@@ -1413,9 +1413,9 @@ def handle_stuck_state(self):
 
 如果检测到智能体陷入循环（最近几条消息内容相同），会添加一条干预消息，提示LLM尝试不同的方法。
 
-### 6.3 具体例子
+### **6.3 具体例子
 
-#### 例子1：工具参数不正确
+#### **例子1：工具参数不正确
 
 假设LLM选择了`GoogleSearch`工具，但提供了错误的参数格式：
 ```json
@@ -1436,7 +1436,7 @@ def handle_stuck_state(self):
 5. 错误消息会被添加到智能体的记忆中
 6. 在下一个步骤中，LLM会看到这个错误消息，并可能尝试修正参数格式
 
-#### 例子2：工具不存在
+#### **例子2：工具不存在
 
 假设LLM选择了一个不存在的工具：
 ```json
@@ -1456,7 +1456,7 @@ def handle_stuck_state(self):
 4. 这个错误消息会被添加到智能体的记忆中
 5. 在下一个步骤中，LLM会看到这个错误消息，并可能选择一个存在的工具
 
-#### 例子3：工具执行失败
+#### **例子3：工具执行失败
 
 假设LLM选择了`GoogleSearch`工具，参数正确，但搜索API暂时不可用：
 ```json
@@ -1479,7 +1479,7 @@ def handle_stuck_state(self):
 5. 这个错误消息会被添加到智能体的记忆中
 6. 在下一个步骤中，LLM会看到这个错误消息，并可能尝试其他方法或工具
 
-### 6.4 总结
+### **6.4 总结
 
 OpenManus通过多层错误处理机制来确保即使LLM给出不正确的响应，系统也能继续运行：
 
@@ -1500,13 +1500,13 @@ OpenManus通过多层错误处理机制来确保即使LLM给出不正确的响�
 
 ---
 
-## 七、实际应用场景与扩展可能
+## **七、实际应用场景与扩展可能
 
-### 7.1 OpenManus的应用场景
+### **7.1 OpenManus的应用场景
 
 OpenManus作为一个功能强大的智能体框架，可以应用于多种场景：
 
-#### 自动化助手
+#### **自动化助手
 
 OpenManus可以作为个人或团队的自动化助手，执行各种任务：
 
@@ -1515,7 +1515,7 @@ OpenManus可以作为个人或团队的自动化助手，执行各种任务：
 - **文档处理**：自动生成、修改和整理文档
 - **数据分析**：执行数据处理脚本，生成分析报告
 
-#### 研究辅助工具
+#### **研究辅助工具
 
 研究人员可以使用OpenManus来加速研究过程：
 
@@ -1524,7 +1524,7 @@ OpenManus可以作为个人或团队的自动化助手，执行各种任务：
 - **实验自动化**：设计、执行和记录实验
 - **结果可视化**：生成图表和可视化展示
 
-#### 教育与学习工具
+#### **教育与学习工具
 
 OpenManus可以作为教育和学习的辅助工具：
 
@@ -1533,7 +1533,7 @@ OpenManus可以作为教育和学习的辅助工具：
 - **编程练习**：生成编程练习并评估解答
 - **知识探索**：帮助学习者探索新领域
 
-#### 开发辅助系统
+#### **开发辅助系统
 
 软件开发人员可以使用OpenManus来提高开发效率：
 
@@ -1542,11 +1542,11 @@ OpenManus可以作为教育和学习的辅助工具：
 - **文档生成**：自动生成代码文档和API说明
 - **测试自动化**：生成测试用例并执行测试
 
-### 7.2 添加新工具的方法
+### **7.2 添加新工具的方法
 
 OpenManus的模块化设计使得添加新工具变得简单直接。以下是添加新工具的步骤：
 
-#### 1) 创建工具类
+#### **1) 创建工具类
 
 首先，创建一个继承自`BaseTool`的新类：
 ```python
@@ -1573,13 +1573,13 @@ class MyNewTool(BaseTool):
     async def execute(self, param1: str, param2: int = 0) -> str:
         """执行工具的具体逻辑"""
         try:
-            # 实现工具功能
+            # **实现工具功能
             result = f"处理 {param1} 和 {param2} 的结果"
             return result
         except Exception as e:
             return f"工具执行出错: {str(e)}"
 ```
-#### 2) 实现工具功能
+#### **2) 实现工具功能
 
 在`execute`方法中实现工具的具体功能。确保：
 
@@ -1587,7 +1587,7 @@ class MyNewTool(BaseTool):
 - 返回清晰的结果或错误信息
 - 使用异步编程（`async/await`）处理I/O操作
 
-#### 3) 添加工具到智能体
+#### **3) 添加工具到智能体
 
 将新工具添加到智能体的可用工具列表中：
 ```python
@@ -1609,26 +1609,26 @@ from app.agent.manus import Manus
 from app.tool.tool_collection import ToolCollection
 from my_new_tool import MyNewTool
 
-# 创建包含新工具的Manus实例
+# **创建包含新工具的Manus实例
 agent = Manus()
 agent.available_tools = ToolCollection(
-    *agent.available_tools.tools,  # 保留原有工具
-    MyNewTool()  # 添加新工具
+    *agent.available_tools.tools,  # **保留原有工具
+    MyNewTool()  # **添加新工具
 )
 ```
 
-#### 4) 更新系统提示（可选）
+#### **4) 更新系统提示（可选）
 
 如果新工具需要特殊的使用说明，可以更新系统提示：
 ```python
 agent.system_prompt += "\n你现在可以使用my_new_tool工具来处理特定任务。"
 ```
 
-### 7.3 定制智能体的方法
+### **7.3 定制智能体的方法
 
 OpenManus的层次化设计使得定制智能体变得灵活多样：
 
-#### 1) 继承现有智能体
+#### **1) 继承现有智能体
 
 最简单的方法是继承现有的智能体类：
 ```python
@@ -1641,15 +1641,15 @@ class MySpecializedAgent(ToolCallAgent):
     system_prompt: str = "你是一个专门用于特定任务的智能体..."
     next_step_prompt: str = "分析当前状态，决定下一步行动..."
     
-    # 自定义属性和方法
+    # **自定义属性和方法
     max_steps: int = 30
     
     async def think(self) -> bool:
-        # 自定义思考逻辑
+        # **自定义思考逻辑
         return await super().think()
 ```
 
-#### 2) 自定义工具集
+#### **2) 自定义工具集
 
 为特定任务定制工具集：
 ```python
@@ -1666,11 +1666,11 @@ class DataAnalysisAgent(ToolCallAgent):
     )
 ```
 
-#### 3) 自定义提示模板
+#### **3) 自定义提示模板
 
 为智能体定制专门的提示模板：
 ```python
-# 在app/prompt/my_agent.py中定义
+# **在app/prompt/my_agent.py中定义
 SYSTEM_PROMPT = """
 你是一个专门用于数据分析的智能体。你可以使用以下工具：
 1. python_execute - 执行Python代码，特别是数据分析代码
@@ -1685,41 +1685,41 @@ SYSTEM_PROMPT = """
 4. 生成分析报告
 """
 
-# 在智能体中使用
+# **在智能体中使用
 from app.prompt.my_agent import SYSTEM_PROMPT
 
 class DataAnalysisAgent(ToolCallAgent):
     system_prompt: str = SYSTEM_PROMPT
 ```
 
-#### 4) 自定义执行流程
+#### **4) 自定义执行流程
 
 通过重写`step`、`think`或`act`方法来自定义执行流程：
 ```python
 async def step(self) -> str:
     """自定义步骤执行逻辑"""
-    # 记录步骤开始时间
+    # **记录步骤开始时间
     start_time = time.time()
     
-    # 执行标准的思考-行动循环
+    # **执行标准的思考-行动循环
     should_act = await self.think()
     if not should_act:
         return "思考完成 - 无需行动"
     
     result = await self.act()
     
-    # 记录步骤执行时间
+    # **记录步骤执行时间
     execution_time = time.time() - start_time
     logger.info(f"步骤执行时间: {execution_time:.2f}秒")
     
     return result
 ```
 
-### 7.4 集成到其他系统的可能性
+### **7.4 集成到其他系统的可能性
 
 OpenManus的设计使其易于集成到各种系统中：
 
-#### 1) Web应用集成
+#### **1) Web应用集成
 
 将OpenManus集成到Web应用中：
 ```python
@@ -1727,24 +1727,24 @@ from fastapi import FastAPI, Request
 from app.agent.manus import Manus
 
 app = FastAPI()
-agents = {}  # 存储用户会话的智能体实例
+agents = {}  # **存储用户会话的智能体实例
 
 @app.post("/chat/{session_id}")
 async def chat(session_id: str, request: Request):
     data = await request.json()
     user_input = data.get("message", "")
     
-    # 获取或创建智能体实例
+    # **获取或创建智能体实例
     if session_id not in agents:
         agents[session_id] = Manus()
     
-    # 运行智能体
+    # **运行智能体
     result = await agents[session_id].run(user_input)
     
     return {"response": result}
 ```
 
-#### 2) 桌面应用集成
+#### **2) 桌面应用集成
 
 将OpenManus集成到桌面应用中：
 ```python
@@ -1755,20 +1755,20 @@ class ManusApp:
     def __init__(self, root):
         self.root = root
         self.agent = Manus()
-        # 设置UI组件
+        # **设置UI组件
         
     async def send_message(self):
         user_input = self.input_field.get()
         self.input_field.delete(0, tk.END)
         
-        # 在后台线程中运行智能体
+        # **在后台线程中运行智能体
         result = await self.agent.run(user_input)
         
-        # 更新UI显示结果
+        # **更新UI显示结果
         self.display_area.insert(tk.END, f"结果: {result}\n")
 ```
 
-#### 3) API服务集成
+#### **3) API服务集成
 
 将OpenManus作为API服务提供：
 ```python
@@ -1788,7 +1788,7 @@ async def query(request: QueryRequest):
     return {"result": result}
 ```
 
-#### 4) 自动化工作流集成
+#### **4) 自动化工作流集成
 
 将OpenManus集成到自动化工作流中：
 ```python
@@ -1818,11 +1818,11 @@ with DAG('manus_workflow', start_date=datetime(2023, 1, 1), schedule_interval='@
     task1 >> task2
 ```
 
-### 7.5 未来发展方向
+### **7.5 未来发展方向
 
 OpenManus作为一个开源项目，有多个潜在的发展方向：
 
-#### 多智能体协作
+#### **多智能体协作
 
 实现多个智能体之间的协作，每个智能体专注于特定领域：
 
@@ -1831,7 +1831,7 @@ OpenManus作为一个开源项目，有多个潜在的发展方向：
 - **评估智能体**：评估其他智能体的输出质量
 - **对抗智能体**：提供批判性思考和挑战
 
-#### 增强学习能力
+#### **增强学习能力
 
 为智能体添加更强的学习能力：
 
@@ -1840,7 +1840,7 @@ OpenManus作为一个开源项目，有多个潜在的发展方向：
 - **示例学习**：从用户示例中学习新技能
 - **反馈学习**：根据用户反馈调整行为
 
-#### 自主性增强
+#### **自主性增强
 
 增强智能体的自主性：
 
@@ -1849,7 +1849,7 @@ OpenManus作为一个开源项目，有多个潜在的发展方向：
 - **自主学习**：识别知识缺口并主动学习
 - **自主决策**：在不确定情况下做出决策
 
-#### 工具生态扩展
+#### **工具生态扩展
 
 扩展工具生态系统：
 
@@ -1858,7 +1858,7 @@ OpenManus作为一个开源项目，有多个潜在的发展方向：
 - **工具市场**：允许社区贡献和分享工具
 - **工具组合**：自动组合多个工具创建复杂功能
 
-#### 安全与隐私增强
+#### **安全与隐私增强
 
 加强安全性和隐私保护：
 
@@ -1867,7 +1867,7 @@ OpenManus作为一个开源项目，有多个潜在的发展方向：
 - **隐私保护**：敏感信息的处理机制
 - **审计日志**：详细记录智能体的所有操作
 
-#### 用户体验优化
+#### **用户体验优化
 
 改善用户与智能体的交互体验：
 
@@ -1877,7 +1877,7 @@ OpenManus作为一个开源项目，有多个潜在的发展方向：
 - **可解释性**：解释决策过程和推理逻辑
 
 OpenManus作为一个灵活且强大的智能体框架，有着广阔的应用前景和发展空间。随着技术的进步和社区的贡献，它有潜力成为构建下一代AI应用的重要基础设施。
-## 八、拙见
+## **八、拙见
 
 **关于大模型的可靠性**  
 大模型的输出仍然需要大量后期校验来修正，这一过程既可以依赖人工编写的规则，也可以借助大模型自身进行自纠自查。或许，随着技术的发展，模型自我优化的能力会进一步增强，使得人工干预的成本逐步降低。
