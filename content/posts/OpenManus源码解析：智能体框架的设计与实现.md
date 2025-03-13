@@ -1051,24 +1051,63 @@ self.memory.add_message(tool_msg)
 #### 消息传递给LLM
 
 在每次调用LLM时，记忆中的消息会被传递给LLM，使其能够了解历史上下文：
-
-python
-
-CopyInsert
-
-`# ToolCallAgent.think方法 response = await self.llm.ask_tool(     messages=self.messages,  # 传递记忆中的所有消息     system_msgs=[Message.system_message(self.system_prompt)]     if self.system_prompt     else None,     tools=self.available_tools.to_params(),     tool_choice=self.tool_choices, )`
+```python
+# ToolCallAgent.think方法
+response = await self.llm.ask_tool(
+    messages=self.messages,  # 传递记忆中的所有消息
+    system_msgs=[Message.system_message(self.system_prompt)]
+    if self.system_prompt
+    else None,
+    tools=self.available_tools.to_params(),
+    tool_choice=self.tool_choices,
+)
+```
 
 这里的`self.messages`就是记忆中的消息列表。
 
 #### 消息格式转换
 
 在传递给LLM之前，消息需要转换为LLM能够理解的格式：
-
-python
-
-CopyInsert
-
-`# LLM._prepare_messages方法 def _prepare_messages(     self, messages: List[Message], system_msgs: Optional[List[Message]] = None ) -> List[Dict]:     """准备发送给LLM的消息"""     prepared_messages = []          # 添加系统消息     if system_msgs:         for msg in system_msgs:             prepared_messages.append({"role": msg.role, "content": msg.content})          # 添加历史消息     for msg in messages:         message_dict = {"role": msg.role, "content": msg.content}                  # 添加工具调用信息         if msg.role == "assistant" and msg.tool_calls:             message_dict["tool_calls"] = [                 {                     "id": tc.id,                     "type": "function",                     "function": {                         "name": tc.function.name,                         "arguments": json.dumps(tc.function.arguments),                     },                 }                 for tc in msg.tool_calls             ]                  # 添加工具响应信息         if msg.role == "tool":             message_dict["tool_call_id"] = msg.tool_call_id             message_dict["name"] = msg.name                  prepared_messages.append(message_dict)          return prepared_messages`
+```python
+# LLM._prepare_messages方法
+def _prepare_messages(
+    self, messages: List[Message], system_msgs: Optional[List[Message]] = None
+) -> List[Dict]:
+    """准备发送给LLM的消息"""
+    prepared_messages = []
+    
+    # 添加系统消息
+    if system_msgs:
+        for msg in system_msgs:
+            prepared_messages.append({"role": msg.role, "content": msg.content})
+    
+    # 添加历史消息
+    for msg in messages:
+        message_dict = {"role": msg.role, "content": msg.content}
+        
+        # 添加工具调用信息
+        if msg.role == "assistant" and msg.tool_calls:
+            message_dict["tool_calls"] = [
+                {
+                    "id": tc.id,
+                    "type": "function",
+                    "function": {
+                        "name": tc.function.name,
+                        "arguments": json.dumps(tc.function.arguments),
+                    },
+                }
+                for tc in msg.tool_calls
+            ]
+        
+        # 添加工具响应信息
+        if msg.role == "tool":
+            message_dict["tool_call_id"] = msg.tool_call_id
+            message_dict["name"] = msg.name
+        
+        prepared_messages.append(message_dict)
+    
+    return prepared_messages
+```
 
 这个方法将`Message`对象转换为包含适当字段的字典，这些字典符合OpenAI API的消息格式要求。
 
