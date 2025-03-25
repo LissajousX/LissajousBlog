@@ -4,35 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "865a9f5f45daa5fb",
+        "id": "af9b64257e25e4b1",
         "type": "tabs",
         "children": [
           {
-            "id": "2967da0338317cbe",
+            "id": "45087d98276eb913",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OpenManus源码解析：智能体框架的设计与实现.md",
+                "file": "常用备忘录.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "OpenManus源码解析：智能体框架的设计与实现"
-            }
-          },
-          {
-            "id": "834e929f0e2048c6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AI工程师学习计划.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "AI工程师学习计划"
+              "title": "常用备忘录"
             }
           }
         ]
@@ -58,7 +44,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "文件列表"
             }
           },
           {
@@ -127,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "深度学习笔记（三）.md",
+                "file": "chat-export (7).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "深度学习笔记（三） 的出链列表"
+              "title": "chat-export (7) 的出链列表"
             }
           },
           {
@@ -154,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OpenManus源码解析：智能体框架的设计与实现.md",
+                "file": "常用备忘录.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of OpenManus源码解析：智能体框架的设计与实现"
+              "title": "常用备忘录 的大纲"
             }
           }
         ],
@@ -172,42 +158,42 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "daily-notes:Open today's daily note": false,
-      "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
     }
   },
-  "active": "2967da0338317cbe",
+  "active": "45087d98276eb913",
   "lastOpenFiles": [
-    "深度学习笔记（二).md",
     "OpenManus源码解析：智能体框架的设计与实现.md",
-    "sizeof 的各种事项.md",
-    "Python 中 map reduce filter sorted 函数的使用方法.md",
-    "心态调整.md",
-    "OpenManus源码解析：智能体框架的设计与实现 1.md",
-    "深度学习笔记（一）.md",
-    "减肥饮食建议.md",
-    "感知机代码权重更新解惑.md",
-    "POSIX 线程库中线程安全和线程同步的函数.md",
-    "减肥建议.md",
-    "AI工程师学习计划.md",
-    "常用备忘录.md",
-    "互斥锁和条件变量的应用.md",
-    "AI大模型学习资料.md",
-    "GDB使用教程.md",
     "深度学习笔记（三）.md",
+    "深度学习笔记（一）.md",
+    "常用备忘录.md",
+    "感知机代码权重更新解惑.md",
+    "C语言中处理二维数组.md",
+    "AI工程师学习计划.md",
+    "深度学习笔记（二).md",
+    "线程安全的消息队列简单实现.md",
+    "心态调整.md",
+    "AI大模型学习资料.md",
+    "使用 sprintf 和相关函数进行字符串格式化.md",
+    "chat-export (7).md",
+    "C语言链表实现.md",
+    "基于ros2的机械臂控制.md",
+    "DEBUGLOG.md",
+    "POSIX 线程库中线程安全和线程同步的函数.md",
+    "GDB使用教程.md",
+    "hugo_tutorial.md",
+    "未命名.md",
+    "减肥建议.md",
+    "减肥饮食建议.md",
+    "互斥锁和条件变量的应用.md",
+    "sizeof 的各种事项.md",
     "chat-export.md",
     "Wireguard内网穿透.md",
-    "DEBUGLOG.md",
-    "客户端教程.md",
-    "Python函数式编程.md",
-    "C语言字符串处理.md",
-    "C语言中处理二维数组.md",
-    "C语言链表实现.md",
-    "线程安全的消息队列简单实现.md",
     "DEBUGLOG/3.png",
     "DEBUGLOG/2.PNG",
     "Pasted image 20240909155047.png",
