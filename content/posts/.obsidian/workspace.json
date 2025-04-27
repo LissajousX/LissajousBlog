@@ -4,24 +4,67 @@
     "type": "split",
     "children": [
       {
-        "id": "af9b64257e25e4b1",
+        "id": "7bbddcb76da02e08",
         "type": "tabs",
         "children": [
           {
-            "id": "45087d98276eb913",
+            "id": "81dae6345738ee9c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "常用备忘录.md",
+                "file": "C++11新特性总述.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "常用备忘录"
+              "title": "C++11新特性总述"
+            }
+          },
+          {
+            "id": "eee207a06c0bf4f6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C语言链表实现.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "C语言链表实现"
+            }
+          },
+          {
+            "id": "2f4337dead46da7d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C++11新特性--自动类型推导与类型相关.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "C++11新特性--自动类型推导与类型相关"
+            }
+          },
+          {
+            "id": "ed79ecdb125143fe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C++11新特性--智能指针.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "C++11新特性--智能指针"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -140,13 +183,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "常用备忘录.md",
+                "file": "C++11新特性--智能指针.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "常用备忘录 的大纲"
+              "title": "C++11新特性--智能指针 的大纲"
             }
           }
         ],
@@ -166,34 +209,34 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "45087d98276eb913",
+  "active": "ed79ecdb125143fe",
   "lastOpenFiles": [
-    "OpenManus源码解析：智能体框架的设计与实现.md",
-    "深度学习笔记（三）.md",
-    "深度学习笔记（一）.md",
-    "常用备忘录.md",
-    "感知机代码权重更新解惑.md",
-    "C语言中处理二维数组.md",
+    "未命名 1.md",
+    "C++11新特性--智能指针.md",
+    "C++11新特性--自动类型推导与类型相关.md",
+    "C++11新特性总述.md",
     "AI工程师学习计划.md",
-    "深度学习笔记（二).md",
+    "C语言链表实现.md",
+    "感知机代码权重更新解惑.md",
+    "单目位姿估计.md",
+    "减肥建议.md",
+    "深度学习笔记（三）.md",
     "线程安全的消息队列简单实现.md",
+    "深度学习笔记（一）.md",
+    "GDB使用教程.md",
+    "sizeof 的各种事项.md",
+    "Wireguard内网穿透.md",
+    "hugo_tutorial.md",
+    "DEBUGLOG.md",
+    "chat-export (9).md",
+    "互斥锁和条件变量的应用.md",
+    "常用备忘录.md",
+    "OpenManus源码解析：智能体框架的设计与实现.md",
+    "C语言中处理二维数组.md",
+    "深度学习笔记（二).md",
     "心态调整.md",
     "AI大模型学习资料.md",
     "使用 sprintf 和相关函数进行字符串格式化.md",
-    "chat-export (7).md",
-    "C语言链表实现.md",
-    "基于ros2的机械臂控制.md",
-    "DEBUGLOG.md",
-    "POSIX 线程库中线程安全和线程同步的函数.md",
-    "GDB使用教程.md",
-    "hugo_tutorial.md",
-    "未命名.md",
-    "减肥建议.md",
-    "减肥饮食建议.md",
-    "互斥锁和条件变量的应用.md",
-    "sizeof 的各种事项.md",
-    "chat-export.md",
-    "Wireguard内网穿透.md",
     "DEBUGLOG/3.png",
     "DEBUGLOG/2.PNG",
     "Pasted image 20240909155047.png",
