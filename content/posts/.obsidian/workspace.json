@@ -4,39 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "7bbddcb76da02e08",
+        "id": "2fef97d40c100c44",
         "type": "tabs",
         "children": [
           {
-            "id": "81dae6345738ee9c",
+            "id": "c04bfd1bfedce4b9",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "C++11新特性总述.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "C++11新特性总述"
-            }
-          },
-          {
-            "id": "eee207a06c0bf4f6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "C语言链表实现.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "C语言链表实现"
+              "title": "新标签页"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -155,13 +136,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "C语言链表实现.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "C语言链表实现 的大纲"
+              "title": "大纲"
             }
           }
         ],
@@ -181,19 +161,25 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "eee207a06c0bf4f6",
+  "active": "c04bfd1bfedce4b9",
   "lastOpenFiles": [
+    "高可用实现.md",
+    "C++11新特性总述.md",
+    "C++11新特性--Lambda表达式.md",
+    "C++11–C++17 Lambda 表达式面试题集.md",
+    "hugo_tutorial.md",
+    "DEBUGLOG.md",
+    "C语言字符串处理.md",
+    "C语言中处理二维数组.md",
+    "C语言链表实现.md",
     "chat-export (10).md",
     "chat-export (11).md",
     "C++11 智能指针详解.md",
     "C++11新特性--自动类型推导与类型相关.md",
-    "未命名.md",
     "C++11 智能指针详解_.md",
     "C++11新特性--智能指针.md",
     "未命名 1.md",
-    "C++11新特性总述.md",
     "AI工程师学习计划.md",
-    "C语言链表实现.md",
     "感知机代码权重更新解惑.md",
     "单目位姿估计.md",
     "减肥建议.md",
@@ -203,12 +189,6 @@
     "GDB使用教程.md",
     "sizeof 的各种事项.md",
     "Wireguard内网穿透.md",
-    "hugo_tutorial.md",
-    "DEBUGLOG.md",
-    "chat-export (9).md",
-    "互斥锁和条件变量的应用.md",
-    "常用备忘录.md",
-    "OpenManus源码解析：智能体框架的设计与实现.md",
     "DEBUGLOG/3.png",
     "DEBUGLOG/2.PNG",
     "Pasted image 20240909155047.png",
